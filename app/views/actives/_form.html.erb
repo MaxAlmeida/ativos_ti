@@ -1,0 +1,62 @@
+<%= form_for @active, :html => { :class => "form-horizontal active" } do |f| %>
+
+  <% if @active.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@active.errors.count, "error") %> prohibited this active from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @active.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :local, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :local, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:local) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :local_registro_cpd, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :local_registro_cpd, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:local_registro_cpd) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :patri_original, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :patri_original, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:patri_original) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :especification, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :especification, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:especification) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :especification_complement, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :especification_complement, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:especification_complement) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                actives_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>

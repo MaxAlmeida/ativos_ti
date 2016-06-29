@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  local: MyString
+  local_registro_cpd: MyString
+  patri_original: MyString
+  especification: MyString
+  especification_complement: MyString
+
+two:
+  local: MyString
+  local_registro_cpd: MyString
+  patri_original: MyString
+  especification: MyString
+  especification_complement: MyString
